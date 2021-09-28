@@ -74,8 +74,6 @@ const EsusuChessboard = props => {
 
     var { vsComputer } = props
 
-    console.log("currentHistory", currentHistory)
-
     // console.log("game_id", game_id)
     // console.log("name", name)
     // console.log("pgn", pgn)
@@ -89,6 +87,8 @@ const EsusuChessboard = props => {
                 updateopponentMOves(valid_o_moves)
             }
         }
+
+        window.addEventListener = x => x
     }, [])
 
 
@@ -265,9 +265,14 @@ const EsusuChessboard = props => {
 
   console.log("visual", opponentMOves)
 
+    // var divs = document.getElementsByTagName("DIV")
+    // for (const div of divs) {
+    //     div.addEventListener("click", onSquareClick)
+    // }
+
   return (
     <View style={styles.container}>
-      <Text>{visual}</Text>
+      <Text>{visual ? visual : ""}</Text>
       <Chessboard
         id="esusuboard"
         width={500}

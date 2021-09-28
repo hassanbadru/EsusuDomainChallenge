@@ -33,7 +33,7 @@ const EsusuChess = props => {
   const onReStartGame = async player_id => {
 
       updateCurrentFen("start")
-      updateGame(new Chess())
+      updateGame(Chess)
      let new_game = await getGameId(player_id)
      if (new_game){
          updateState("board")
@@ -56,47 +56,67 @@ const EsusuChess = props => {
   }
 
   let current_view = (
-      <View style={styles.container}>
-          <Button
-           title="New Game vs CPU"
-           color="#28a745"
-           onPress={() => onLoadGame('computer')}
-          />
-          <br />
-          <Button
-           title="Load Game 1 (vs Human over Network)"
-           color="#777"
-           onPress={() => onLoadGame('0')}
-          />
-          <br />
-          <Button
-           title="Load Game 2 (vs Human over Network)"
-           color="#777"
-           onPress={() => onLoadGame('1')}
-          />
-          <br />
+      <View style={styles.body}>
+          <View style={styles.button}>
+              <Button
+               title="New Game vs CPU"
+               color="#28a745"
+               onPress={() => onLoadGame('computer')}
+              />
+          </View>
+
+          <View style={styles.button}>
+              <Button
+               title="Load Game 1 vs Human (over Network)"
+               color="#777"
+               onPress={() => onLoadGame('0')}
+               style={styles.button}
+              />
+          </View>
+
+          <View style={styles.button}>
+              <Button
+               title="Load Game 2 vs Human (over Network)"
+               color="#777"
+               onPress={() => onLoadGame('1')}
+               style={styles.button}
+              />
+          </View>
       </View>
   )
 
   if (currentState == "board"){
       current_view = (
-          <View style={styles.container}>
-              <Button title="Pause Game"  color="#ccc"  onPress={() => onPauseGame()} />
-              <br />
-              <Button title="Save Game" color="#17a2b8" onPress={() => onSaveGame()} />
-              <br />
-              <Button title="End Game" color="#dc3545" onPress={onEndGame}/>
+
+          <View style={styles.body}>
+              <View style={styles.button}>
+                  <Button title="Pause Game"  color="#ccc"  onPress={() => onPauseGame()} />
+              </View>
+
+              <View style={styles.button}>
+                  <Button title="Save Game" color="#17a2b8" onPress={() => onSaveGame()} />
+              </View>
+
+              <View style={styles.button}>
+                  <Button title="End Game" color="#dc3545" onPress={onEndGame}/>
+              </View>
               <EsusuChessboard vsComputer={vsComputer} />
           </View>
       )
   } else if (currentState == "existing"){
       current_view = (
-          <View style={styles.container}>
-              <Button title="Continue Game"  color="#17a2b8"  onPress={() => onLoadGame('1')} />
-              <br />
-              <Button title="Start New"  color="#28a745"  onPress={() => onReStartGame('0')} />
-              <br />
-              <Button title="End Game" color="#dc3545" onPress={onEndGame}/>
+          <View style={styles.body}>
+              <View style={styles.button}>
+                  <Button title="Continue Game"  color="#17a2b8"  onPress={() => onLoadGame('1')} />
+              </View>
+
+              <View style={styles.button}>
+                  <Button title="Start New"  color="#28a745"  onPress={() => onReStartGame('0')} />
+              </View>
+
+              <View style={styles.button}>
+                  <Button title="End Game" color="#dc3545" onPress={onEndGame}/>
+              </View>
           </View>
       )
   }
@@ -136,8 +156,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: '2%'
+    padding: '2%',
+    margin: 5,
+    marginTop: '7%'
   },
+  body: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
+  button: {
+      margin: 5
+  }
 });
 
 

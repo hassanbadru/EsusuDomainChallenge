@@ -51,6 +51,7 @@ Write a node.js web service using any framework of your preference which exposes
 **Game Options Page**
 ![Game Options][start-page]
 
+
 **Load Game with ID: 1**
 ![Load Options][load-game]
 

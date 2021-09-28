@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import ApplicationProvider from './src/contexts'
 import EsusuChess from './src/screens/startpage'
 
+
 const App = props => {
   const [currentState, updateState] = useState("new")
 

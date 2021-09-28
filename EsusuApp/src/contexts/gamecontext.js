@@ -4,10 +4,12 @@ import Chess from "chess.js"; // import Chess from  "chess.js"(default) if recie
 
 const GameContext = createContext();
 
+var new_chess = Chess
+
 const GameProvider = props => {
     const [currentGame, updateCurrentGame] = useState(null)
 
-    const [game, updateGame] = useState(new Chess())
+    const [game, updateGame] = useState(new_chess)
 
     const [paused, updatePaused] = useState(null)
     // current board position
