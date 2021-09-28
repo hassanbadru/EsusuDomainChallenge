@@ -1,3 +1,4 @@
+
 # Esusu Full Stack Project
  **Requirements**
  - Display a chess board which the user can interact with.
@@ -24,6 +25,9 @@ Write a node.js web service using any framework of your preference which exposes
 `/game/` through which a client can POST to create new games, PUT to update existing games
 (based on ID) and GET and DELETE those games (based on id as well).
 
+ - **API Documentation**:  ([OpenAPI 3.0 YAML](EsusuServer/api/openapi.yaml))
+ - **Persistence**: JSON / Local Storage ([games.db.json](EsusuServer/games.db.json))
+
 ## How to run
 **EsusuServer (Backend)**
 
@@ -37,12 +41,12 @@ Write a node.js web service using any framework of your preference which exposes
 
     cd EsusuApp && npm install && npm start
 
-
+**Expo Client**
 ![Using Expo Client][expo-screenshot]
-### Game Options Page
+**Game Options Page**
 ![Game Options][start-page]
 
-### Load Game with ID: 1
+**Load Game with ID: 1**
 ![Load Options][load-game]
 
 ## OpenAPI Specification
@@ -286,3 +290,4 @@ Write a node.js web service using any framework of your preference which exposes
 [expo-screenshot]: screenshots/expo.png
 [start-page]: screenshots/start_page.png
 [load-game]: screenshots/load_game_1.png
+[db-json]: EsusuServer/games.db.json
