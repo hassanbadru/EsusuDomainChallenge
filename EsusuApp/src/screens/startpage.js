@@ -8,6 +8,7 @@ import Chess from "chess.js"; // import Chess from  "chess.js"(default) if recie
 
 const EsusuChess = props => {
   const [currentState, updateState] = useState("new")
+  const [loadedGame, updateLoadedGame] = useState(null)
   const [vsComputer, updateVsComputer] = useState(false)
   var { updateGame, currentGame, currentHistory, updateCurrentGame, updateCurrentFen, getGameId, saveGame } = useGame()
 
@@ -27,15 +28,21 @@ const EsusuChess = props => {
      let new_game = await getGameId(game_id)
      if (new_game){
          updateState("board")
+         updateLoadedGame(game_id)
      }
   }
 
-  const onReStartGame = async player_id => {
+  const onReStartGame = async () => {
 
-      updateCurrentFen("start")
-      updateGame(Chess)
-     let new_game = await getGameId(player_id)
-     if (new_game){
+     updateCurrentFen("start")
+     updateGame(new Chess())
+
+     if (loadedGame){
+         let new_game = await getGameId(loadedGame)
+         if (new_game){
+             updateState("board")
+         }
+     } else {
          updateState("board")
      }
   }
@@ -48,6 +55,7 @@ const EsusuChess = props => {
      updateVsComputer(false)
      updateCurrentFen("start")
      updateGame(new Chess())
+     updateLoadedGame(null)
   }
 
 
@@ -107,11 +115,11 @@ const EsusuChess = props => {
       current_view = (
           <View style={styles.body}>
               <View style={styles.button}>
-                  <Button title="Continue Game"  color="#17a2b8"  onPress={() => onLoadGame('1')} />
+                  <Button title="Continue Game"  color="#17a2b8"  onPress={() => updateState("board")} />
               </View>
 
               <View style={styles.button}>
-                  <Button title="Start New"  color="#28a745"  onPress={() => onReStartGame('0')} />
+                  {<Button title="Restart Game"  color="#28a745"  onPress={() => onReStartGame()} />}
               </View>
 
               <View style={styles.button}>

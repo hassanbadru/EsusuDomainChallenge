@@ -61,6 +61,7 @@ Write a node.js web service using any framework of your preference which exposes
 - Expo Client (works perfectly with web simulator / sometimes has issues with expo iOS / Android simulator)
 - Restful API for CRUD operations fully functionally & testable via Swagger UI (LOAD fully integrated w/ Mobile App while SAVE, UPDATE & DELETE aren't fully integrated with Mobile App)
 - Persistence achieved via local storage with JSON file
+- Because next move depends on pre-defined PGN (via API); if next move for online player isn't valid, no move is made (player1 would need to move piece for player2 to continue)
 - No extensive styling
 
 

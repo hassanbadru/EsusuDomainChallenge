@@ -83,7 +83,7 @@ const EsusuChessboard = props => {
             if (pgn){
                 var parsed_pgn = parsePGN(pgn)
                 let valid_o_moves = parsed_pgn.moves.filter((_, index) => index%2 !== 0)
-                console.log("valid_o_moves", valid_o_moves)
+                // console.log("valid_o_moves", valid_o_moves)
                 updateopponentMOves(valid_o_moves)
             }
         }
@@ -126,8 +126,8 @@ const EsusuChessboard = props => {
 
     const opponentMove = () => {
         let possibleMoves = game.moves();
-        console.log("possibleMoves", possibleMoves)
-        console.log("opponentMOves", opponentMOves)
+        // console.log("possibleMoves", possibleMoves)
+        // console.log("opponentMOves", opponentMOves)
 
         // exit if the game is over
         if (
@@ -141,7 +141,7 @@ const EsusuChessboard = props => {
           if (pgn){
               let nextMoveIndex = nextOMove
               game.move(opponentMOves[nextMoveIndex].move)
-              console.log("nextMoveIndex", nextMoveIndex)
+              // console.log("nextMoveIndex", nextMoveIndex)
               // updateFen(game.fen())
               updateCurrentFen(game.fen())
               updateCurrentHistory(game.history({ verbose: true }))
@@ -264,7 +264,7 @@ const EsusuChessboard = props => {
       visual = (opponentMOves && opponentMOves[nextOMove]) ? `Next Move: ${opponentMOves[nextOMove].move}` : null
   }
 
-  console.log("visual", opponentMOves)
+  // console.log("visual", opponentMOves)
 
     // var divs = document.getElementsByTagName("DIV")
     // for (const div of divs) {
