@@ -39,6 +39,7 @@ Write a node.js web service using any framework of your preference which exposes
 **EsusuApp (Frontend)**
 
     cd EsusuDomainChallenge
+    npm install --global expo-cli
     cd EsusuApp && npm install && npm start
 
 
