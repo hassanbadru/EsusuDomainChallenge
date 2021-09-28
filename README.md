@@ -14,10 +14,12 @@
 
 ## Project Descriptions
 **EsusuApp (Frontend)**
+
 Create a react-native mobile application that presents a valid chess board. It should be possible
 for a person to make moves but only legal moves. It is a frontend web app that uses the headless game engine to validate moves and both displays the board and captures user input using the visualization library.
 
 **EsusuServer (Backend)**
+
 Write a node.js web service using any framework of your preference which exposes an API through which a user can save and load chess games. Create an endpoint
 `/game/` through which a client can POST to create new games, PUT to update existing games
 (based on ID) and GET and DELETE those games (based on id as well).
@@ -25,20 +27,23 @@ Write a node.js web service using any framework of your preference which exposes
 ## How to run
 **EsusuServer (Backend)**
 
-    git clone blahblah.git
-    cd EsusuApp && npm install && npm start
+    git clone https://github.com/hassanbadru/EsusuDomainChallenge.git
+    cd EsusuServer && npm install && npm start
 
 
  > Open http://localhost:8000/docs to view Swagger UI
 
 **EsusuApp (Frontend)**
 
-    git clone blahblah.git
     cd EsusuApp && npm install && npm start
 
 
 ![Using Expo Client][expo-screenshot]
+### Game Options Page
 ![Game Options][start-page]
+
+### Load Game with ID: 1
+![Load Options][load-game]
 
 ## OpenAPI Specification
     openapi: 3.0.1
@@ -279,4 +284,5 @@ Write a node.js web service using any framework of your preference which exposes
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [expo-screenshot]: screenshots/expo.png
-[start-page]: screenshots/start-page.png
+[start-page]: screenshots/start_page.png
+[load-game]: screenshots/load_game_1.png
