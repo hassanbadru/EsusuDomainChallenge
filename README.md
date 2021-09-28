@@ -1,11 +1,9 @@
-
-
 # Esusu Full Stack Project
  **Requirements**
- - Display a chess board which the user can interact with.
- - Implement valid chess-logic (only legal moves can be made on the board).
- - Allow a person to play a game against another player over a network.
- - Save and load games by connecting to a backend that stores games.
+ - [x] Display a chess board which the user can interact with.
+ - [x] Implement valid chess-logic (only legal moves can be made on the board).
+ - [x] Allow a person to play a game against another player over a network.
+ - [x] Save and load games by connecting to a backend that stores games.
 
  **Added Features**
  - Play against the CPU.
@@ -46,6 +44,7 @@ Write a node.js web service using any framework of your preference which exposes
 
 **Expo Client**
  > Open http://localhost:19002 to view Expo Client
+
 ![Using Expo Client][expo-screenshot]
 
 
