@@ -49,7 +49,7 @@ Write a node.js web service using any framework of your preference which exposes
 
 
 **Game Options Page (iOS Simulator)**
-![Game Options][start-page =150x]
+![Game Options][start-page]
 
 
 **Load Game with ID: 1 (Web Simulator)**
