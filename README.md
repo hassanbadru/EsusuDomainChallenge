@@ -45,7 +45,7 @@ Write a node.js web service using any framework of your preference which exposes
 
 **Expo Client**
  > Open http://localhost:19002 to view Expo Client
- 
+
 ![Using Expo Client][expo-screenshot]
 
 **Game Options Page**
@@ -55,6 +55,8 @@ Write a node.js web service using any framework of your preference which exposes
 ![Load Options][load-game]
 
 ## OpenAPI Specification
+![API docs][open-api]
+
     openapi: 3.0.1
     info:
       title: Chess App
@@ -295,4 +297,5 @@ Write a node.js web service using any framework of your preference which exposes
 [expo-screenshot]: screenshots/expo.png
 [start-page]: screenshots/start_page.png
 [load-game]: screenshots/load_game_1.png
+[open-api]: screenshots/open_api.png
 [db-json]: EsusuServer/games.db.json

@@ -9,12 +9,12 @@ import Chess from "chess.js"; // import Chess from  "chess.js"(default) if recie
 const EsusuChess = props => {
   const [currentState, updateState] = useState("new")
   const [vsComputer, updateVsComputer] = useState(false)
-  var { updateGame, currentGame, updateCurrentGame, updateCurrentFen, getGameId, startPlayer } = useGame()
+  var { updateGame, currentGame, currentHistory, updateCurrentGame, updateCurrentFen, getGameId, saveGame } = useGame()
 
-  const onStartGame = async () => {
-     let new_game = await startPlayer()
+  const onSaveGame = async () => {
+     let new_game = await saveGame(currentHistory)
      if (new_game){
-         updateState("board")
+         updateState("existing")
      }
   }
 
@@ -40,6 +40,8 @@ const EsusuChess = props => {
      }
   }
 
+
+
   const onEndGame = async () => {
      // let new_game = await getGameId(player_id)
      updateState("new")
@@ -56,26 +58,20 @@ const EsusuChess = props => {
   let current_view = (
       <View style={styles.container}>
           <Button
-           title="Start New Game(over Network)"
-           color="#17a2b8"
-           onPress={() => onStartGame()}
-          />
-          <br />
-          <Button
-           title="New Game vs Computer"
+           title="New Game vs CPU"
            color="#28a745"
            onPress={() => onLoadGame('computer')}
           />
           <br />
           <Button
-           title="Load Game 1 (over Network)"
-           color="#ccc"
-           onPress={() => onLoadGame('1')}
+           title="Load Game 1 (vs Human over Network)"
+           color="#777"
+           onPress={() => onLoadGame('0')}
           />
           <br />
           <Button
-           title="Load Game 2 (over Network)"
-           color="#ccc"
+           title="Load Game 2 (vs Human over Network)"
+           color="#777"
            onPress={() => onLoadGame('1')}
           />
           <br />
@@ -85,7 +81,9 @@ const EsusuChess = props => {
   if (currentState == "board"){
       current_view = (
           <View style={styles.container}>
-              <Button title="Pause Game"  color="#17a2b8"  onPress={() => onPauseGame()} />
+              <Button title="Pause Game"  color="#ccc"  onPress={() => onPauseGame()} />
+              <br />
+              <Button title="Save Game" color="#17a2b8" onPress={() => onSaveGame()} />
               <br />
               <Button title="End Game" color="#dc3545" onPress={onEndGame}/>
               <EsusuChessboard vsComputer={vsComputer} />

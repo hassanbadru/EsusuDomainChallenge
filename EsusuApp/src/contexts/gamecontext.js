@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useContext, createContext} from 'react'
-import { updateGame, startNewGame, findGameById, updateGameInStore, deleteGame } from '../api/chessapi'
+import { updateGame, saveNewGame, findGameById, updateGameInStore, deleteGame } from '../api/chessapi'
 import Chess from "chess.js"; // import Chess from  "chess.js"(default) if recieving an error about new Chess not being a constructor
 
 const GameContext = createContext();
 
 const GameProvider = props => {
     const [currentGame, updateCurrentGame] = useState(null)
-    
+
     const [game, updateGame] = useState(new Chess())
 
     const [paused, updatePaused] = useState(null)
@@ -23,8 +23,8 @@ const GameProvider = props => {
     // custom square styles
     const [squareStyles, updateSquareStyles] = useState({})
 
-    const startPlayer = async () => {
-        let new_game = await startNewGame()
+    const saveGame = async game_history => {
+        let new_game = await saveNewGame(game_history)
         if (new_game){
             console.log("new_game", new_game)
             updateCurrentGame(new_game)
@@ -52,7 +52,7 @@ const GameProvider = props => {
         return {}
     }
 
-    var data = { game, updateGame, currentGame, currentFen, currentHistory, updateCurrentGame, updateCurrentFen, startPlayer, square, updateSquare, getGameId, pieceSquare, updatePieceSquare, updateCurrentHistory, dropSquareStyle, updateDropSquareStyle, squareStyles, updateSquareStyles }
+    var data = { game, updateGame, currentGame, currentFen, currentHistory, updateCurrentGame, updateCurrentFen, saveGame, square, updateSquare, getGameId, pieceSquare, updatePieceSquare, updateCurrentHistory, dropSquareStyle, updateDropSquareStyle, squareStyles, updateSquareStyles }
 
     return <GameContext.Provider value={data} {...props} />
 }

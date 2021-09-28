@@ -74,6 +74,8 @@ const EsusuChessboard = props => {
 
     var { vsComputer } = props
 
+    console.log("currentHistory", currentHistory)
+
     // console.log("game_id", game_id)
     // console.log("name", name)
     // console.log("pgn", pgn)
