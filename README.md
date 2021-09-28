@@ -43,6 +43,7 @@ Write a node.js web service using any framework of your preference which exposes
 
 **Expo Client**
 ![Using Expo Client][expo-screenshot]
+
 **Game Options Page**
 ![Game Options][start-page]
 
