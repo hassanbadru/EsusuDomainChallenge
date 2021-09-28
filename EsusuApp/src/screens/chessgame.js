@@ -88,7 +88,8 @@ const EsusuChessboard = props => {
             }
         }
 
-        window.addEventListener = x => x
+        // window.addEventListener = x => x
+        window.addEventListener("click", onSquareClick)
     }, [])
 
 

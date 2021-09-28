@@ -1,4 +1,5 @@
 
+
 # Esusu Full Stack Project
  **Requirements**
  - Display a chess board which the user can interact with.
@@ -45,8 +46,8 @@ Write a node.js web service using any framework of your preference which exposes
 
 **Expo Client**
  > Open http://localhost:19002 to view Expo Client
-
 ![Using Expo Client][expo-screenshot]
+
 
 **Game Options Page**
 ![Game Options][start-page]
@@ -55,8 +56,16 @@ Write a node.js web service using any framework of your preference which exposes
 **Load Game with ID: 1**
 ![Load Options][load-game]
 
+
+**Limitations / Constraints**
+- Expo Client (works perfectly with web simulator / sometimes has issues with expo iOS / Android simulator)
+- Restful API for CRUD operations fully functionally & testable via Swagger UI (LOAD fully integrated w/ Mobile App while SAVE, UPDATE & DELETE aren't fully integrated with Mobile App)
+- Persistence achieved via local storage with JSON file
+- No extensive styling
+
+
 ## OpenAPI Specification
-![API docs][open-api]
+   ![API docs][open-api-ui]
 
     openapi: 3.0.1
     info:
@@ -298,5 +307,5 @@ Write a node.js web service using any framework of your preference which exposes
 [expo-screenshot]: screenshots/expo.png
 [start-page]: screenshots/start_page.png
 [load-game]: screenshots/load_game_1.png
-[open-api]: screenshots/open_api.png
+[open-api-ui]: screenshots/open_api.png
 [db-json]: EsusuServer/games.db.json
