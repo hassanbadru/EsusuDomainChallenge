@@ -48,11 +48,11 @@ Write a node.js web service using any framework of your preference which exposes
 ![Using Expo Client][expo-screenshot]
 
 
-**Game Options Page**
-![Game Options][start-page]
+**Game Options Page (iOS Simulator)**
+![Game Options][start-page =150x]
 
 
-**Load Game with ID: 1**
+**Load Game with ID: 1 (Web Simulator)**
 ![Load Options][load-game]
 
 
