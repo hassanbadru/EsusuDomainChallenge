@@ -32,16 +32,20 @@ Write a node.js web service using any framework of your preference which exposes
 **EsusuServer (Backend)**
 
     git clone https://github.com/hassanbadru/EsusuDomainChallenge.git
+    cd EsusuDomainChallenge
     cd EsusuServer && npm install && npm start
-
 
  > Open http://localhost:8000/docs to view Swagger UI
 
 **EsusuApp (Frontend)**
 
+    cd EsusuDomainChallenge
     cd EsusuApp && npm install && npm start
 
+
 **Expo Client**
+ > Open http://localhost:19002 to view Expo Client
+ 
 ![Using Expo Client][expo-screenshot]
 
 **Game Options Page**
